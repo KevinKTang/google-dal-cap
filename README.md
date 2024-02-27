@@ -40,7 +40,7 @@ analyzing the Cyclistic historical bike trip data to identify trends.
 Through data analysis, determine how annual members and casual riders use Cyclistic bikes differently to aid in designing marketing strategies to convert casual riders into annual members.
 
 ### What is the problem you are trying to solve?
-_We are trying to solve how to effectively market to casual riders so they convert to annual members._
+We are trying to solve how to effectively market to casual riders so they convert to annual members.
 
 # 2. Prepare
 
