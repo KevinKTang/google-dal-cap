@@ -92,7 +92,47 @@ The following steps were performed for each of the twelve CSV files -
 2. Added a new column 'day_of_week' which displayed the day using the following function (for the WEEKDAY function, 1 = Sunday) -
 	- **=TEXT(WEEKDAY('started_at'), "dddd")**
 3. Sorted the entire sheet by 'ride_length_mins' in ascending order.
-   
+
+### RStudio
+
+You can find the full .R code [here](https://github.com/KevinKTang/google-dal-cap)
+
+1. I installed and loaded necessary packages such as dplyr, tidyverse, lubridate.
+2. I uploaded the raw data CSV files and then used read.csv() to save them as individual data frames i.e. jan23, feb23 etc.
+3. Using rbind(), I merged the 12 separate data frames into a whole year dataframe i.e. year23.
+4. Cleaned the data -
+   - Removed any null/blank/NA observations using na.omit()
+   - Removed any duplicate observations using distinct()
+   - Removed any rows that had a ride length (mins) that was < 1 min or had a negative value.
+5. Added new columns (variables) -
+   - Date
+   - Year
+   - Month
+   - Day
+   - Season 
+6. Performed calculations -
+	- Number of Rides
+   		- Overall
+   		- by Rideable Type
+   		- by Member Type
+   		- by Month
+   		- by Season
+	- Average Ride Length
+   		- Overall
+   		- by Rideable Type
+   		- by Member Type
+   		- by Month
+   		- by Season
+7. Created visualisations -
+	- Number of Rides - Member Type & Rideable Type
+	- Number of Rides - Day of Week
+	- Number of Rides - Month
+ 	- Number of Rides - Season
+	- Average Ride Length - Rideable Type
+	- Average Ride Length - Member Type
+	- Average Ride Length - Month
+	- Average Ride Length - Season
+
 # 4. Analyse
 
 # 5. Share
