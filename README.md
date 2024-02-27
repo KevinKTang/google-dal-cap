@@ -77,10 +77,22 @@ _We are trying to solve how to effectively market to casual riders so they conve
 - The data provides us rides undertaken by Cyclistic users and lists if they are a casual rider or annual member, we can compare how they use the service and how often.
 
 ### Are there any problems with the data?
-- From an initial inspection of the csv files themselves, we found rows with null, duplicate, and invalid values. 
+- From an initial inspection of the csv files themselves, I found rows with null, duplicate, and invalid values. 
 
 # 3. Process
 
+I used a combination of Excel and R for data analysis. Excel was used initially to familiarise myself with the data and for initial sorting and column addition. I followed up with RStudio to merge the CSVs as a whole year, analysed it and created visualisations.   
+
+### Microsoft Excel
+
+The following steps were performed for each of the twelve CSV files - 
+
+1. Added a new column 'ride_length_mins' which calculated the ride length in minutes using the following function (formatted as NUMBER) -
+	- **=('ended_at' - 'started_at')\*24\*60** 
+2. Added a new column 'day_of_week' which displayed the day using the following function (for the WEEKDAY function, 1 = Sunday) -
+	- **=TEXT(WEEKDAY('started_at'), "dddd")**
+3. Sorted the entire sheet by 'ride_length_mins' in ascending order.
+   
 # 4. Analyse
 
 # 5. Share
