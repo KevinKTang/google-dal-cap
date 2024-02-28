@@ -95,7 +95,7 @@ The following steps were performed for each of the twelve CSV files -
 
 ### RStudio
 
-You can find the full .R code [here](https://github.com/KevinKTang/google-dal-cap)
+You can find the full .R code [here.](https://github.com/KevinKTang/google-dal-cap/blob/main/code.R)
 
 1. I installed and loaded necessary packages such as dplyr, tidyverse, lubridate.
 2. I uploaded the raw data CSV files and then used read.csv() to save them as individual data frames i.e. jan23, feb23 etc.
@@ -133,8 +133,8 @@ You can find the full .R code [here](https://github.com/KevinKTang/google-dal-ca
 	- Average Ride Length - Month
 	- Average Ride Length - Season
 
-# 4. Analyse
+# 4. Analyse & 5. Share
 
-# 5. Share
+
 
 # 6. Act
