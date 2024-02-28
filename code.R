@@ -160,6 +160,17 @@ year23_final %>%
 
 #----Visualisations - Number of Rides----
 
+# Number of Rides - Member Type
+
+year23_final %>% 
+  group_by(member_casual) %>% 
+  dplyr::summarize(trip_count = n()) %>% 
+  ggplot(aes(x="", y=trip_count, fill=member_casual)) +
+    geom_col() +
+    geom_text(face="bold", size=4, family ="Roboto", aes(label=scales::comma(trip_count)),  position=position_stack(vjust=0.5)) +
+    coord_polar(theta = "y") +
+    theme_void()
+
 # Number of Rides - Member Type & Rideable Type 
 
 year23_final %>% 
@@ -205,7 +216,7 @@ year23_final %>%
 year23_final %>% 
   group_by(member_casual, season) %>% 
   dplyr::summarize(trip_count = n()) %>% 
-  ggplot(aes(x= season, y=trip_count, fill=member_casual, color=member_casual)) + 
+  ggplot(aes(x= factor(season, levels = c("Summer", "Autumn", "Winter", "Spring")), y=trip_count, fill=member_casual, color=member_casual))  + 
     geom_bar(stat='identity', position='dodge') +
     geom_text(size=3.75, family ="Roboto", aes(label=scales::comma(trip_count)),  position=position_dodge(width=0.9), vjust=-0.5) +
     theme_bw() +
