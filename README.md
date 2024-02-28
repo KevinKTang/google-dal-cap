@@ -97,6 +97,8 @@ The following steps were performed for each of the twelve CSV files -
 
 You can find the full .R code [here.](https://github.com/KevinKTang/google-dal-cap/blob/main/code.R)
 
+Overview - 
+
 1. I installed and loaded necessary packages such as dplyr, tidyverse, lubridate.
 2. I uploaded the raw data CSV files and then used read.csv() to save them as individual data frames i.e. jan23, feb23 etc.
 3. Using rbind(), I merged the 12 separate data frames into a whole year dataframe i.e. year23.
@@ -111,7 +113,7 @@ You can find the full .R code [here.](https://github.com/KevinKTang/google-dal-c
    - Day
    - Season 
 6. Performed calculations -
-	- Number of Rides
+	- Number of Trips
    		- Overall
    		- by Rideable Type
    		- by Member Type
@@ -124,10 +126,10 @@ You can find the full .R code [here.](https://github.com/KevinKTang/google-dal-c
    		- by Month
    		- by Season
 7. Created visualisations -
-	- Number of Rides - Member Type & Rideable Type
-	- Number of Rides - Day of Week
-	- Number of Rides - Month
- 	- Number of Rides - Season
+	- Number of Trips - Member Type & Rideable Type
+	- Number of Trips - Day of Week
+	- Number of Trips - Month
+ 	- Number of Trips - Season
 	- Average Ride Length - Rideable Type
 	- Average Ride Length - Member Type
 	- Average Ride Length - Month
@@ -135,6 +137,82 @@ You can find the full .R code [here.](https://github.com/KevinKTang/google-dal-c
 
 # 4. Analyse & 5. Share
 
+We are interested in answering the following regarding the business task - 
+1. How do casual riders and annual members differ in their use of Cyclistic during the week based on rideable type?
+2. What is the utilisation of Cyclystic throughout the year based on seasons and individual months?
+3. What is the average trip length between casual riders and annual members?
 
+## Number of Trips
+
+### Number of Trips - Member Type
+The total number of trips during 2023 was 4,244,189. Casual riders made up 35.46% of total trips. Annual members were 64.54% of all trips.
+
+![image](https://github.com/KevinKTang/google-dal-cap/assets/30889787/2efe75ae-fcbf-4326-b66a-842b345f85ae)
+
+### Number of Trips - Member Type & Rideable Type
+- Casual riders used all three rideable types -
+	- 860,702 used classic bikes, 75,412 used docked  bikes, and 569,179 used electric bikes.
+- On the other hand, annual members only used classic and electric bikes - 
+	- 1,788,780 trips used classic bikes and 950,116 used electric bikes.
+ 
+![image](https://github.com/KevinKTang/google-dal-cap/assets/30889787/70120493-2889-4aff-bd61-fdf0aa9d8cb1)
+
+### Number of Trips - Season
+- There is a noticeable increase in bike usage across both casual riders and annual members during the Summer season which accounted for 39.16% of total trips.
+
+![image](https://github.com/KevinKTang/google-dal-cap/assets/30889787/13c50e24-2128-4a94-8174-fce4a4d37676)
+
+### Number of Trips - Month
+- July was the busiest month for both casual riders and annual members.
+
+![image](https://github.com/KevinKTang/google-dal-cap/assets/30889787/aca67e2a-c5a7-44ad-bde0-6d3b60cf85aa)
+
+### Number of Trips - Day of Week
+- On average, across an entire week, annual member usage is consistent. On the other hand, casual rider usage is lowest on Monday and stays relatively low throughout the week, but spikes on weekends.
+
+![image](https://github.com/KevinKTang/google-dal-cap/assets/30889787/1b88ac5d-807c-436b-b617-8281211e9ef5)
+
+## Average Ride Length
+
+### Average Ride Length - Member Type
+
+The average ride length for annual members was 12 minutes, while for casual riders it was 23 minutes.
+
+![image](https://github.com/KevinKTang/google-dal-cap/assets/30889787/345366a9-8331-4fe5-a8f2-8691d087e6b0)
+
+### Average Ride Length - Season
+
+Average ride length is mostly consistent across seasons, however, there is a dip in usage during Winter, casual rider average ride length drops to 16 minutes.
+
+![image](https://github.com/KevinKTang/google-dal-cap/assets/30889787/c9efe203-b627-4ad5-97ee-34874efa02c4)
+
+## Average Ride Length - Month
+
+Average ride length throughout the year for annual members is consistent and only ranges from 10 to 13 minutes.
+
+![image](https://github.com/KevinKTang/google-dal-cap/assets/30889787/d00090bb-ebfe-4930-86cd-806d61dbc5d6)
 
 # 6. Act
+
+### Conclusion
+
+- The most popular rideable type among both casual riders and annual members was the 'classic' bicycle.
+- The docked bicycle rideable type only accounted for 1.78% of trips in 2023.
+- The average ride length was 23 minutes for casual riders but on average rode 12 minutes longer than annual members. 
+- The busiest day for annual members was Wednesday, and it was Saturday for casual riders.
+- Summer was the busiest season of 2023 for both casual riders and annual members.
+
+### Recommendations
+
+- Offer discounted annual plan upgrade pricing to casual riders for their first year.
+- During marketing, focus on added benefits of annual memberships such as "Ride with a friend" feature for free twice a month. It may also be worth partnering with local businesses to offer discounts through the annual membership accessible via the Cyclistic mobile application. 
+- Cyclistic should allot most of their marketing resources during early Spring and Summer where casual riders are most prevalent. They should also focus on advertising during the weekends.
+- Implement referral code bonuses for existing annual members so they may be incentivised to advertise via word of mouth to their colleagues, friends and familes.
+  
+### Resources
+
+Inspiration was taken from - 
+- [Kelly Adam](https://www.kellyjadams.com/post/google-capstone-project#viewer-41dce)
+- [Usman Aftab Khan](https://medium.com/codex/exploratory-data-analysis-cyclistic-bike-share-analysis-case-study-1b1a00475a4f)
+- [Joe Yong](https://medium.com/@joeanselmyz/google-data-analytics-case-study-1-using-rstudio-7c552ab63aa3)
+
